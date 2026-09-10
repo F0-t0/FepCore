@@ -1,11 +1,13 @@
 package pl.fepbox.core.menu;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
@@ -14,7 +16,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 import pl.fepbox.core.utils.MiniMessageUtils;
 
 public abstract class Menu implements InventoryHolder {
@@ -53,7 +54,7 @@ public abstract class Menu implements InventoryHolder {
         ItemMeta itemmeta = itemstack.getItemMeta();
         itemmeta.displayName(MiniMessageUtils.deserialize(displayname));
         
-        ArrayList<String> Stringlore = new ArrayList<>(Arrays.asList(text));
+        ArrayList<String> Stringlore = new ArrayList<>(Arrays.asList(lore));
         ArrayList<Component> loreList = new ArrayList<>();
         for (String line : Stringlore) {
             loreList.add(MiniMessageUtils.deserialize(line));
