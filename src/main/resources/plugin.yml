@@ -1,0 +1,8 @@
+main: pl.fepbox.core.FepCore
+version: 1.0.0
+name: FepCore
+author: Foto
+description: A library for making Minecraft plugins
+api-version: 1.21
+
+
