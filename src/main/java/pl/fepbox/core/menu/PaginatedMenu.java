@@ -17,7 +17,7 @@ public abstract class PaginatedMenu<T> extends Menu {
     private static ItemStack previousPage;
     private static ItemStack currentPage;
 
-    public PaginatedMenu(Player player, int size, String title, int maxItemsPerPage, List<T> items) {
+    public PaginatedMenu(int size, String title, int maxItemsPerPage, List<T> items) {
         super(size, title);
         this.maxItemsPerPage = maxItemsPerPage;
         this.items = items;
