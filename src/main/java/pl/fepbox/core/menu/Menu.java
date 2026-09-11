@@ -22,7 +22,6 @@ public abstract class Menu implements InventoryHolder {
     protected Inventory inv;
     protected final int size;
     protected String title;
-    protected Player player;
 
     private final Map<Integer, Consumer<InventoryClickEvent>> slotActions = new HashMap<>();
 
@@ -33,8 +32,8 @@ public abstract class Menu implements InventoryHolder {
 
     public abstract void decorate();
 
-    public void open() {
-        this.inv = Bukkit.createInventory(null, size, MiniMessageUtils.deserialize(title));
+    public void open(Player player) {
+        this.inv = Bukkit.createInventory(this, size, MiniMessageUtils.deserialize(title));
         slotActions.clear();
         decorate();
         player.openInventory(inv);
