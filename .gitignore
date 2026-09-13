@@ -1,1 +1,6 @@
 target/
+.settings/
+.vscode/
+.project
+.classpath
+.factorypath
